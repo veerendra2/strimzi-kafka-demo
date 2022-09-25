@@ -1,0 +1,9 @@
+---
+resources:
+  - namespace.yaml
+  - configmaps/external-logging-kafka.yaml
+  - configmaps/external-logging-topic-operator.yaml
+  - configmaps/external-logging-user-operator.yaml
+  - configmaps/external-logging-zookeeper.yaml
+  - configmaps/external-logging-kafka-conect.yaml
+  - cluster-operator.yaml

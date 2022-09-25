@@ -1,0 +1,11 @@
+---
+bases:
+  - ../../base
+resources:
+  - deployment.yaml
+  - users.yaml
+  - topics.yaml
+  - kafka-connector-example.yaml
+  - kafka-connect-example.yaml
+  - cluster-operator.yaml
+  - producer-consumer.yaml

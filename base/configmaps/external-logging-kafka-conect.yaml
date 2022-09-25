@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: external-logging-kafka-connect
+  namespace: kafka
+data:
+  log4j.properties: |-
+    log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+    log4j.appender.CONSOLE.layout=net.logstash.log4j.JSONEventLayoutV1
+    log4j.appender.CONSOLE.layout.ConversionPattern=%d{ISO8601} %p %m (%c) [%t]%n
+    connect.root.logger.level=INFO
+    log4j.rootLogger=${connect.root.logger.level}, CONSOLE
+    log4j.logger.org.apache.zookeeper=ERROR
+    log4j.logger.org.I0Itec.zkclient=ERROR
+    log4j.logger.org.reflections=ERROR

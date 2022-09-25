@@ -1,0 +1,12 @@
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: my-topic
+  labels:
+    strimzi.io/cluster: carbon-dev
+spec:
+  partitions: 1
+  replicas: 2 # https://strimzi.io/docs/operators/latest/configuring.html#using-the-topic-operator-str, can only changed by using the kafka-reassign-partitions.sh tool
+  config:
+    min.insync.replicas: 1

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: external-logging-zookeeper
+  namespace: kafka
+data:
+  log4j.properties: >-
+    # Do not change this generated file. Logging can be configured in the corresponding kubernetes/openshift resource.
+
+    log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+
+    log4j.appender.CONSOLE.layout=net.logstash.log4j.JSONEventLayoutV1
+
+    zookeeper.root.logger=INFO
+
+    log4j.rootLogger=${zookeeper.root.logger}, CONSOLE

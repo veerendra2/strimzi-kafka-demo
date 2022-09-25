@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: external-logging-user-operator
+  namespace: kafka
+data:
+  log4j2.properties: |-
+    name=UOConfig
+    appender.console.type=Console
+    appender.console.name=STDOUT
+    appender.console.layout.type=JsonLayout
+    appender.console.layout.stacktraceAsString = true
+    appender.console.layout.eventEol = true
+    appender.console.layout.compact = true
+    rootLogger.level=INFO
+    rootLogger.appenderRefs=stdout
+    rootLogger.appenderRef.console.ref=STDOUT
+    rootLogger.additivity=false
