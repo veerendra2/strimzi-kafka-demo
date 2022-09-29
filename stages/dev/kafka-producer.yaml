@@ -1,5 +1,3 @@
-# Deployment for a producer/consumer, to push messages into kafka
-# simple deadman switch, if producer can't create messages, alert will be triggered
 ---
 apiVersion: apps/v1
 kind: Deployment
